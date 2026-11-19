@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCLCS Career Fair</title>
+<style>
+  :root { --navy:#002557; --card:#0B3A73; --gold:#D4AF37; --light:#F4F1E8; --soft:#DCE3EE; --muted:#B9C6D8; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { height:100%; background:#000E22; overflow:hidden; }
+  body { font-family: Calibri, "Segoe UI", Carlito, Arial, sans-serif; color:var(--light); }
+  .head { font-family: Cambria, Caladea, Georgia, "Times New Roman", serif; font-weight:700; }
+  #viewport { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; }
+  #stage { position:relative; width:1920px; height:1080px; flex:none; transform-origin:center center; }
+  .slide { position:absolute; inset:0; background:var(--navy); overflow:hidden; opacity:0; visibility:hidden; transition:opacity .6s ease, visibility 0s linear .6s; }
+  .slide.active { opacity:1; visibility:visible; transition:opacity .6s ease; }
+  .abs { position:absolute; }
+  .bgvid { position:absolute; left:0; top:0; width:1920px; height:1080px; object-fit:cover; }
+  .wm { position:absolute; left:460px; top:40px; width:1000px; height:1000px; opacity:.07; }
+  .shadow { text-shadow:0 4px 16px rgba(0,20,50,.85); }
+  h2.title { position:absolute; left:128px; top:128px; width:1664px; height:80px; display:flex; align-items:center; font-size:72px; line-height:1.1; color:var(--gold); }
+  .card { position:absolute; background:var(--card); border-radius:20px; }
+  .card.top { border-top:8px solid var(--gold); }
+  .card.left { border-left:6px solid var(--gold); }
+  .footer { position:absolute; left:128px; top:968px; height:64px; display:flex; align-items:center; gap:20px; font-size:24px; color:var(--muted); }
+  .footer img { width:64px; height:64px; border-radius:50%; }
+  .footer.panel { left:128px; top:960px; width:1120px; height:80px; padding:8px 24px; background:rgba(0,37,87,.92); border-radius:16px; color:var(--light); font-weight:700; }
+  .icon { display:block; }
+  .icon svg { width:100%; height:100%; display:block; }
+
+  /* controls */
+  #controls { position:fixed; right:16px; bottom:16px; display:flex; gap:8px; align-items:center; opacity:0; transition:opacity .3s; z-index:5; }
+  body.show-ui #controls { opacity:1; }
+  #controls button { font:600 15px Calibri, Arial, sans-serif; color:var(--light); background:rgba(0,37,87,.85); border:1px solid rgba(212,175,55,.6); border-radius:8px; padding:8px 14px; cursor:pointer; }
+  #controls button:hover { background:var(--card); }
+  #count { font:600 15px Calibri, Arial, sans-serif; color:var(--light); background:rgba(0,37,87,.85); border-radius:8px; padding:8px 12px; }
+  #notes { position:fixed; left:16px; right:16px; bottom:72px; max-width:900px; margin:0 auto; padding:16px 20px; background:rgba(0,20,50,.94); border:1px solid rgba(212,175,55,.6); border-radius:12px; font-size:18px; line-height:1.45; color:var(--light); display:none; z-index:6; }
+  body.notes-on #notes { display:block; }
+</style>
+</head>
+<body class="show-ui">
+<div id="viewport"><div id="stage">
+
+  <!-- 1 Cover -->
+  <section class="slide active" data-notes="Welcome everyone. Cipriani College of Labour and Co-operative Studies, serving Trinidad and Tobago since 1966. Our main campus is in Valsayn, right on the Churchill Roosevelt Highway.">
+    <video class="bgvid" src="assets/cover.mp4" poster="assets/cover-poster.jpg" muted loop playsinline preload="auto" aria-label="Aerial view of the CCLCS Valsayn campus beside the highway"></video>
+    <img class="abs" src="assets/logo.png" alt="Cipriani College of Labour and Co-operative Studies logo" style="left:210px;top:164px;width:1500px;height:316px">
+    <p class="abs head shadow" style="left:128px;top:620px;width:1664px;height:100px;display:flex;align-items:center;justify-content:center;font-size:72px;color:var(--gold)">Start Here. Go Anywhere.</p>
+    <span class="abs icon" style="left:440px;top:786px;width:48px;height:48px;color:var(--gold)"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" color="currentColor" style="color:currentColor" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg></span>
+    <p class="abs shadow" style="left:504px;top:780px;width:1000px;height:60px;display:flex;align-items:center;font-size:40px;font-weight:700">Valsayn Campus, on the Churchill Roosevelt Highway</p>
+  </section>
+
+  <!-- 2 Why -->
+  <section class="slide" data-notes="Two ways in. No requirements? Start with an Introductory Programme, which leads into our full progression: Certificate, then Diploma, then Associate Degree, then Degree. Already have CSEC passes? You can go straight into our core programmes.">
+    <video class="bgvid" src="assets/campus.mp4" poster="assets/campus-poster.jpg" muted loop playsinline preload="auto" aria-label="Aerial view of the CCLCS campus and grounds"></video>
+    <img class="wm" src="assets/seal-watermark.png" alt="">
+    <h2 class="title head shadow">Why Study with Us?</h2>
+    <div class="card top" style="left:128px;top:256px;width:812px;height:360px"></div>
+    <div class="card top" style="left:980px;top:256px;width:812px;height:360px"></div>
+    <p class="abs" style="left:176px;top:312px;width:360px;height:54px;border-radius:27px;background:var(--gold);color:var(--navy);font-size:26px;font-weight:700;letter-spacing:4px;display:flex;align-items:center;justify-content:center">NO REQUIREMENTS</p>
+    <p class="abs head" style="left:176px;top:390px;width:716px;font-size:48px;color:var(--gold)">Introductory Programmes</p>
+    <p class="abs" style="left:176px;top:470px;width:716px;font-size:32px;line-height:1.4;color:var(--soft)">Your way in to our degree progression, or straight on to our core programmes.</p>
+    <p class="abs" style="left:1028px;top:312px;width:360px;height:54px;border-radius:27px;background:var(--gold);color:var(--navy);font-size:26px;font-weight:700;letter-spacing:4px;display:flex;align-items:center;justify-content:center">WITH CSEC PASSES</p>
+    <p class="abs head" style="left:1028px;top:390px;width:716px;font-size:48px;color:var(--gold)">Direct Entry</p>
+    <p class="abs" style="left:1028px;top:470px;width:716px;font-size:32px;line-height:1.4;color:var(--soft)">Your CSEC passes give you entry into our core programmes.</p>
+    <div class="abs" style="left:128px;top:664px;width:1664px;height:112px;border:3px solid var(--gold);border-radius:20px;background:rgba(0,37,87,.55);display:flex;align-items:center;justify-content:center;gap:24px;font-size:32px;font-weight:700">
+      <span>Certificate</span><svg width="64" height="32" viewBox="0 0 64 32" aria-hidden="true"><path d="M0 9h38V0l26 16-26 16v-9H0z" fill="#D4AF37"/></svg><span>Diploma</span><svg width="64" height="32" viewBox="0 0 64 32" aria-hidden="true"><path d="M0 9h38V0l26 16-26 16v-9H0z" fill="#D4AF37"/></svg><span>Associate Degree</span><svg width="64" height="32" viewBox="0 0 64 32" aria-hidden="true"><path d="M0 9h38V0l26 16-26 16v-9H0z" fill="#D4AF37"/></svg><span style="color:var(--gold)">Degree</span>
+    </div>
+    <div class="footer shadow"><img src="assets/seal.png" alt="CCLCS seal"><span>Cipriani College of Labour &amp; Co-operative Studies&nbsp;&nbsp;|&nbsp;&nbsp;cclcs.edu.tt</span></div>
+  </section>
+
+  <!-- 3 Programmes -->
+  <section class="slide" data-notes="Six core programmes, each one available from Certificate right up to Degree: Project Management, Occupational Safety Health and the Environment, Human Resource Management, Co-operative and Credit Union Management, Security Administration and Management, and Labour Studies.">
+    <img class="wm" src="assets/seal-watermark.png" alt="">
+    <h2 class="title head">Our Core, Industry-Relevant Programmes</h2>
+    <p class="abs" style="left:128px;top:222px;width:1664px;font-size:32px;color:var(--soft)">Every programme is available from Certificate all the way to Degree.</p>
+    <div class="card left" style="left:128px;top:306px;width:536px;height:230px"></div><p class="abs head" style="left:174px;top:342px;width:450px;font-size:52px;line-height:1.1;color:var(--gold)">PRM</p><p class="abs" style="left:174px;top:416px;width:450px;font-size:30px;line-height:1.3">Project Management</p>
+<div class="card left" style="left:692px;top:306px;width:536px;height:230px"></div><p class="abs head" style="left:738px;top:342px;width:450px;font-size:52px;line-height:1.1;color:var(--gold)">OSHE</p><p class="abs" style="left:738px;top:416px;width:450px;font-size:30px;line-height:1.3">Occupational Safety, Health and the Environment</p>
+<div class="card left" style="left:1256px;top:306px;width:536px;height:230px"></div><p class="abs head" style="left:1302px;top:342px;width:450px;font-size:52px;line-height:1.1;color:var(--gold)">HRM</p><p class="abs" style="left:1302px;top:416px;width:450px;font-size:30px;line-height:1.3">Human Resource Management</p>
+<div class="card left" style="left:128px;top:564px;width:536px;height:230px"></div><p class="abs head" style="left:174px;top:600px;width:450px;font-size:52px;line-height:1.1;color:var(--gold)">CORP</p><p class="abs" style="left:174px;top:674px;width:450px;font-size:30px;line-height:1.3">Co-operative and Credit Union Management</p>
+<div class="card left" style="left:692px;top:564px;width:536px;height:230px"></div><p class="abs head" style="left:738px;top:600px;width:450px;font-size:52px;line-height:1.1;color:var(--gold)">SAM</p><p class="abs" style="left:738px;top:674px;width:450px;font-size:30px;line-height:1.3">Security Administration and Management</p>
+<div class="card left" style="left:1256px;top:564px;width:536px;height:230px"></div><p class="abs head" style="left:1302px;top:600px;width:450px;font-size:52px;line-height:1.1;color:var(--gold)">LBS</p><p class="abs" style="left:1302px;top:674px;width:450px;font-size:30px;line-height:1.3">Labour Studies</p>
+
+    <div class="footer"><img src="assets/seal.png" alt="CCLCS seal"><span>Cipriani College of Labour &amp; Co-operative Studies&nbsp;&nbsp;|&nbsp;&nbsp;cclcs.edu.tt</span></div>
+  </section>
+
+  <!-- 4 Accreditation -->
+  <section class="slide" data-notes="Our core programmes are industry recognised and accredited by ACTT. GATE covers 100% of tuition fees, and you can choose full-time or part-time classes. Main campus in Valsayn, plus our Tobago campus in Scarborough. Call 868 609 3064 or visit cclcs.edu.tt.">
+    <div class="abs" style="left:128px;top:128px;width:1664px;height:128px;border-radius:20px;background:rgba(0,37,87,.92)"></div>
+    <h2 class="title head" style="left:168px;top:152px;width:1584px">Accreditation, Financing and Classes</h2>
+    <div class="card top" style="left:128px;top:312px;width:531px;height:608px"></div>
+    <span class="abs icon" style="left:176px;top:368px;width:80px;height:80px;color:var(--gold)"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" color="currentColor" style="color:currentColor" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="m23 12-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69zm-12.91 4.72-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48z"></path></svg></span>
+    <p class="abs head" style="left:176px;top:472px;width:435px;font-size:44px;line-height:1.2;color:var(--gold)">ACTT Accredited</p>
+    <p class="abs" style="left:176px;top:548px;width:435px;font-size:30px;line-height:1.4;color:var(--soft)">All core programmes are industry recognised and accredited by the Accreditation Council of Trinidad and Tobago.</p>
+    <div class="abs" style="left:695px;top:312px;width:531px;height:608px;border-radius:20px;background:var(--gold)"></div>
+    <span class="abs icon" style="left:743px;top:368px;width:80px;height:80px;color:var(--navy)"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" color="currentColor" style="color:currentColor" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"></path></svg></span>
+    <p class="abs head" style="left:743px;top:472px;width:435px;height:120px;display:flex;align-items:center;font-size:96px;color:var(--navy)">100%</p>
+    <p class="abs" style="left:743px;top:612px;width:435px;font-size:30px;line-height:1.4;font-weight:700;color:var(--navy)">GATE covers 100% of tuition fees.</p>
+    <div class="card top" style="left:1261px;top:312px;width:531px;height:608px"></div>
+    <span class="abs icon" style="left:1309px;top:368px;width:80px;height:80px;color:var(--gold)"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" color="currentColor" style="color:currentColor" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8"></path><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path></svg></span>
+    <p class="abs head" style="left:1309px;top:472px;width:435px;font-size:44px;line-height:1.2;color:var(--gold)">Full-Time or<br>Part-Time</p>
+    <p class="abs" style="left:1309px;top:612px;width:435px;font-size:30px;line-height:1.4;color:var(--soft)">Classes that fit around your work and your life.</p>
+    <div class="footer panel"><img src="assets/seal.png" alt="CCLCS seal"><span>Cipriani College of Labour &amp; Co-operative Studies&nbsp;&nbsp;|&nbsp;&nbsp;cclcs.edu.tt</span></div>
+  </section>
+
+</div></div>
+
+<div id="notes"></div>
+<div id="controls">
+  <button id="prev" aria-label="Previous slide">&#8249; Prev</button>
+  <span id="count">1 / 4</span>
+  <button id="next" aria-label="Next slide">Next &#8250;</button>
+  <button id="notesBtn">Notes</button>
+  <button id="fs">Full screen</button>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var count = document.getElementById('count'), notes = document.getElementById('notes');
+  var i = 0, hideTimer;
+
+  function fit() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = 'scale(' + s + ')';
+  }
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function (el, k) {
+      el.classList.toggle('active', k === i);
+      var v = el.querySelector('video');
+      if (!v) return;
+      if (k === i) { v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+      else v.pause();
+    });
+    count.textContent = (i + 1) + ' / ' + slides.length;
+    notes.textContent = slides[i].getAttribute('data-notes') || '';
+  }
+  function poke() {
+    document.body.classList.add('show-ui');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function () { document.body.classList.remove('show-ui'); }, 2500);
+  }
+  function toggleFs() {
+    if (!document.fullscreenElement) { (document.documentElement.requestFullscreen || function(){}).call(document.documentElement); }
+    else { document.exitFullscreen(); }
+  }
+
+  document.getElementById('prev').onclick = function (e) { e.stopPropagation(); show(i - 1); };
+  document.getElementById('next').onclick = function (e) { e.stopPropagation(); show(i + 1); };
+  document.getElementById('notesBtn').onclick = function (e) { e.stopPropagation(); document.body.classList.toggle('notes-on'); };
+  document.getElementById('fs').onclick = function (e) { e.stopPropagation(); toggleFs(); };
+  document.getElementById('controls').addEventListener('click', function (e) { e.stopPropagation(); });
+
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter') { e.preventDefault(); show(i + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { e.preventDefault(); show(i - 1); }
+    else if (k === 'Home') show(0);
+    else if (k === 'End') show(slides.length - 1);
+    else if (k === 'f' || k === 'F') toggleFs();
+    else if (k === 'n' || k === 'N') document.body.classList.toggle('notes-on');
+    poke();
+  });
+  document.getElementById('viewport').addEventListener('click', function (e) {
+    if (e.clientX < window.innerWidth / 3) show(i - 1); else show(i + 1);
+  });
+  var tx = null;
+  document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1);
+  });
+  document.addEventListener('mousemove', poke);
+  window.addEventListener('resize', fit);
+  fit(); show(0); poke();
+})();
+</script>
+</body>
+</html>
